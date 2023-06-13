@@ -4,7 +4,7 @@ let M = Number(prompt('Введіть число, по яке будемо ск�
 let C = confirm('Чи потрібно пропускати парні числа?');
 document.writeln(`Число, від якого складали :        ${N} <br>`);
 
-if (Number.isInteger(N) && Number.isInteger(M)&&(M > N))
+if (Number.isInteger(N)&& Number.isInteger(M) && (M > N)&& isNaN(N)==false && isNaN(M)==false)
 {
      for (N; N <= M; N++){
        if (C === false){
