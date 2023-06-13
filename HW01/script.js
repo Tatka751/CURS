@@ -39,7 +39,10 @@ console.log('Загальна ціна товарів без копійок: '+ 
 console.log('Сума товарів з округленням до сотень (в більшу сторону): '+ ceilSumPrice);
 console.log('Сума товарів з округленням до сотень (в меншу сторону): '+ fSumPrice);
 
-evenNumber = Boolean(floorSumPrice % 2);
+if (floorSumPrice % 2 == 0)
+  evenNumber = false;
+else evenNumber = true;
+
 console.log('сума всіх товарів,округлена в меншу сторону, є непарним числом? ' +evenNumber);
 console.log('Решта після оплати купюрою 500 грн становитиме ' +restOfMoney);
 console.log('Середня ціна становить  ' +averageSum);
