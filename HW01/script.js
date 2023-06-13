@@ -16,18 +16,6 @@ let averageSum = Math.ceil((sumPrice / 3) * 100) / 100;
 let discount = Math.ceil((max - min) * Math.random() + min);
 let sumToPay = Math.ceil(((sumPrice * ((100 - discount) * 0.01)) * 100)) / 100;
 let profit = Math.ceil((sumPrice / 2 - (discount * 0.01 * sumPrice)) * 100) / 100;
-var text = `Найбільша ціна з цих товарів: ${maxPrice} <br>
-Найменша ціна з цих товарів: ${minPrice} <br>
-Загальна ціна товарів: ${sumPrice} <br>
-Загальна ціна товарів без копійок: ${truncSumPrice} <br>
-Сума товарів з округленням до сотень(в більшу сторону): ${ceilSumPrice} <br>
-Сума товарів з округленням до сотень (в меншу сторону): ${fSumPrice} <br>
-Cума всіх товарів,округлена в меншу сторону, є непарним числом? ${evenNumber} <br>
-Решта після оплати купюрою 500 грн становитиме ${restOfMoney}<br>
-Середня ціна становить ${averageSum}<br>
-Знижка становить ${discount} % <br>
-Сума до оплати за всі товари з урахуванням знижки ${sumToPay} <br> 
-Чистий прибуток: ${profit} <br>  `;
 
 console.log('Ціна навушників: '+priceHeadphone);
 console.log('Ціна планшета: '+ priceTablet);
@@ -47,6 +35,19 @@ console.log('Середня ціна становить  ' +averageSum);
 console.log('Знижка становить  ' + discount + ' %');
 console.log('Сума до оплати за всі товари з урахуванням знижки  ' +sumToPay);
 console.log('Чистий прибуток:   ' +profit); 
+
+var text = `Найбільша ціна з цих товарів: ${maxPrice} <br>
+Найменша ціна з цих товарів: ${minPrice} <br>
+Загальна ціна товарів: ${sumPrice} <br>
+Загальна ціна товарів без копійок: ${truncSumPrice} <br>
+Сума товарів з округленням до сотень(в більшу сторону): ${ceilSumPrice} <br>
+Сума товарів з округленням до сотень (в меншу сторону): ${fSumPrice} <br>
+Cума всіх товарів,округлена в меншу сторону, є непарним числом? ${evenNumber} <br>
+Решта після оплати купюрою 500 грн становитиме ${restOfMoney}<br>
+Середня ціна становить ${averageSum}<br>
+Знижка становить ${discount} % <br>
+Сума до оплати за всі товари з урахуванням знижки ${sumToPay} <br> 
+Чистий прибуток: ${profit} <br>  `;
 
 document.write(text)
 
