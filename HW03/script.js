@@ -76,10 +76,11 @@ function randomPass (passLength = prompt (`Функція 9. Зі скілько
 function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слово перевірити?`))
 { 
     check = ''
+    enteredWord = enteredWord.toLowerCase();
     for (i = enteredWord.length-1; i >= 0; i--) {
         check = check + enteredWord[i];
      }
-    result = (enteredWord == check ? true :false);
+    result = (enteredWord === check ? true :false);
     return result;
 }
 
