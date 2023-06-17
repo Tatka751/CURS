@@ -79,7 +79,7 @@ function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слов�
     for (i = enteredWord.length-1; i >= 0; i--) {
         check = check + enteredWord[i];
      }
-    result = (enteredWord === check ? true :false);
+    result = (enteredWord == check ? true :false);
     return result;
 }
 
