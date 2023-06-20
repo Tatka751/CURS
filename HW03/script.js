@@ -1,7 +1,7 @@
 //1. Найбільша цифра в числі
 function maxNum (enteredNumber = prompt (`Функція 1. Введіть число `) )
 {
-    enteredNumber = Number(enteredNumber);
+    let enteredNumber = Number(enteredNumber);
 
     if (isNaN(enteredNumber)) {
             return `Введене значення не є числом!`;
@@ -9,7 +9,7 @@ function maxNum (enteredNumber = prompt (`Функція 1. Введіть чи�
     else {
         enteredNumber = String(enteredNumber)    
         let maxNumber = 0;
-        for (i = 0; i < enteredNumber.length; i++)
+        for (let i = 0; i < enteredNumber.length; i++)
         {
             if (maxNumber < enteredNumber.charAt(i))
             maxNumber = enteredNumber.charAt(i);
@@ -24,7 +24,7 @@ function maxNum (enteredNumber = prompt (`Функція 1. Введіть чи�
 // 3. Функція, яка форматує ім'я, роблячи першу букву великою
 function correctName (name = prompt (`Функція 3. Введіть ім'я `))
 {
-    formattedName = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();  
+    let formattedName = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();  
     return formattedName;
 }
 
