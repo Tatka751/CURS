@@ -7,8 +7,7 @@ if (Number.isInteger(N) && !isNaN(N))
 if (Number.isInteger(M) && !isNaN(M))
 {
   let C = confirm('Чи потрібно пропускати парні числа?');
-}
-document.writeln(`Число, від якого складали :        ${N} <br>`);
+    document.writeln(`Число, від якого складали :        ${N} <br>`);
 
 for (N; N <= M; N++){
        if (C === false){
@@ -29,3 +28,5 @@ for (N; N <= M; N++){
     document.writeln(`Число, отрмиане після складання :  ${SUM} <br>`);
 } else 
     document.writeln(`Складання не виконано. Перевірте, щоб введені числа були цілими.`);
+
+}
