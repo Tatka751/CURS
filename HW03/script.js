@@ -11,9 +11,9 @@ function maxNum (enteredNumber = prompt (`Функція 1. Введіть чи�
         let maxNumber = 0;
         for (let i = 0; i < enteredNumber.length; i++)
         {
-            if (maxNumber < enteredNumber.charAt(i))
+            if (maxNumber < enteredNumber.charAt(i)){
             maxNumber = enteredNumber.charAt(i);
-
+            }
         }
         //document.writeln(`1.   ${enteredNumber}  це  ${maxNumber}`);
         return `${enteredNumber} це ${maxNumber}`;
@@ -27,7 +27,9 @@ function correctName (name = prompt (`Функція 3. Введіть ім'я `
     if (name!=''){
      const formattedName = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();  
     return formattedName;
-    } else return `Ви не ввели ім'я`;
+    } else {
+        return `Ви не ввели ім'я`;
+    }
 }
 
 //5. Функція, яка повертає випадкове ціле число в діапазоні від N до M 
@@ -37,7 +39,9 @@ function randomNumber (N = prompt (`Функція 5. Введіть почат�
     M = Number(M);
     if (Number.isInteger(N) && Number.isInteger(M)) {
         return Math.floor(Math.random() * (M - N + 1)) + N;
-    } else  return `Введене значення не є числом!`;
+    } else  {
+        return `Введене значення не є числом!`;
+    }
    
 }
 
@@ -51,11 +55,13 @@ function exchange (currency = prompt (`Функція 7. Вкажіть суму
         currExchange = Number(currency.slice(0,length-1)) * 37;
         return ` ${currExchange} UAH`; 
     } 
-   else if (currency.slice(currency.length-3) === 'UAH'){
+   else if (currency.slice(currency.length-3).toUpperCase() === 'UAH'){
         currExchange = Number(currency.slice(0,length-3)) / 37;
         return ` ${currExchange} $`;
     }
-    } else return `Ви не ввели дані!`;
+    } else {
+       return `Ви не ввели дані!`;
+   }
 }
 
 //9. Функція, яка кенерації випадкового паролю (тільки числа),
@@ -88,7 +94,9 @@ function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слов�
      }
     result = (enteredWord === check ? true :false);
     return result;
-    } else return `Ви не ввели слово`;
+    } else {
+        return `Ви не ввели слово`;
+    }
 }
 
 
