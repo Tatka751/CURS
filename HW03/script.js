@@ -1,8 +1,8 @@
 //1. Найбільша цифра в числі
-const num = prompt (`Функція 1. Введіть число `)
-function maxNum (num)
+const enteredNumber = prompt (`Функція 1. Введіть число `)
+function maxNum (enteredNumber)
 {
-    enteredNumber = Number(num);
+    enteredNumber = Number(enteredNumber);
 
     if (isNaN(enteredNumber)) {
             return `Введене значення не є числом!`;
@@ -21,6 +21,7 @@ function maxNum (num)
     }
   
 }
+
 
 // 3. Функція, яка форматує ім'я, роблячи першу букву великою
 function correctName (name = prompt (`Функція 3. Введіть ім'я `))
@@ -101,7 +102,7 @@ function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слов�
 }
 
 
-document.writeln(`Функція 1.  Найбільша цифра в числі: ${maxNum(num)} <br>`);
+document.writeln(`Функція 1.  Найбільша цифра в числі: ${maxNum(enteredNumber)} <br>`);
 document.writeln(`Функція 3.  Форматоване ім'я : ${correctName()}<br>`);
 document.writeln(`Функція 5.  Випадкове число в заданому користувачем діапазоні : ${randomNumber()}<br>`);
 document.writeln(`Функція 7.  Результат конвертації валют : ${exchange()}<br>`);
