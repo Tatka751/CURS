@@ -1,7 +1,8 @@
 //1. Найбільша цифра в числі
-function maxNum (enteredNumber = prompt (`Функція 1. Введіть число `) )
+const num = prompt (`Функція 1. Введіть число `)
+function maxNum (num)
 {
-    enteredNumber = Number(enteredNumber);
+    enteredNumber = Number(num);
 
     if (isNaN(enteredNumber)) {
             return `Введене значення не є числом!`;
