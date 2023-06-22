@@ -1,9 +1,9 @@
+
 //1. Найбільша цифра в числі
-const enteredNumber = prompt (`Функція 1. Введіть число `)
+const num = prompt (`Функція 1. Введіть число `);
 function maxNum (enteredNumber)
 {
     enteredNumber = Number(enteredNumber);
-
     if (isNaN(enteredNumber)) {
             return `Введене значення не є числом!`;
         }   
@@ -24,7 +24,8 @@ function maxNum (enteredNumber)
 
 
 // 3. Функція, яка форматує ім'я, роблячи першу букву великою
-function correctName (name = prompt (`Функція 3. Введіть ім'я `))
+const enteredName = prompt (`Функція 3. Введіть ім'я `);
+function correctName (name)
 {
     if (name!=''){
      const formattedName = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();  
@@ -35,7 +36,9 @@ function correctName (name = prompt (`Функція 3. Введіть ім'я `
 }
 
 //5. Функція, яка повертає випадкове ціле число в діапазоні від N до M 
-function randomNumber (N = prompt (`Функція 5. Введіть початок діапазону`), M = prompt (`Функція 5. Введіть кінець діапазону`))
+const enteredN = prompt (`Функція 5. Введіть початок діапазону`);
+const enteredM = prompt (`Функція 5. Введіть кінець діапазону`);
+function randomNumber (N , M )
 {
     N = Number(N);
     M = Number(M);
@@ -48,7 +51,8 @@ function randomNumber (N = prompt (`Функція 5. Введіть почат�
 }
 
 //7. Функція, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку
-function exchange (currency = prompt (`Функція 7. Вкажіть суму зі знаком валюти в кінці`))
+const enteredCurrency = prompt (`Функція 7. Вкажіть суму зі знаком валюти в кінці`);
+function exchange (currency)
 { 
    if (currency.length > 0) {
    let currExchange = 0;
@@ -69,7 +73,8 @@ function exchange (currency = prompt (`Функція 7. Вкажіть суму
 //9. Функція, яка кенерації випадкового паролю (тільки числа),
 //довжина встановлюється користувачем або по замовчуванню = 8
 //символам.
-function randomPass (passLength = prompt (`Функція 9. Зі скількох сиволів генерувати пароль?`, 8))
+const enteredLength = prompt (`Функція 9. Зі скількох сиволів генерувати пароль?`, 8);
+function randomPass (passLength)
 { 
     passLength = Number(passLength)
     if (Number.isInteger(passLength)){
@@ -86,7 +91,8 @@ function randomPass (passLength = prompt (`Функція 9. Зі скілько
 
 
 //11. Функція, яка перевіряє, чи є слово паліндромом
-function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слово перевірити?`))
+const userWord = prompt (`Функція 11. Яке слово перевірити?`);
+function isPolyndrom (enteredWord )
 { 
     let check = '';
     if (enteredWord!=''){
@@ -102,9 +108,9 @@ function isPolyndrom (enteredWord = prompt (`Функція 11. Яке слов�
 }
 
 
-document.writeln(`Функція 1.  Найбільша цифра в числі: ${maxNum(enteredNumber)} <br>`);
-document.writeln(`Функція 3.  Форматоване ім'я : ${correctName()}<br>`);
-document.writeln(`Функція 5.  Випадкове число в заданому користувачем діапазоні : ${randomNumber()}<br>`);
-document.writeln(`Функція 7.  Результат конвертації валют : ${exchange()}<br>`);
-document.writeln(`Функція 9.  Згенерований пароль: ${randomPass()}<br>`);
-document.writeln(`Функція 11. Введене слово поліндром?: ${isPolyndrom()}<br>`);
+document.writeln(`Функція 1.  Найбільша цифра в числі: ${maxNum(num)} <br>`);
+document.writeln(`Функція 3.  Форматоване ім'я : ${correctName(enteredName)}<br>`);
+document.writeln(`Функція 5.  Випадкове число в заданому користувачем діапазоні : ${randomNumber(enteredN,enteredM)}<br>`);
+document.writeln(`Функція 7.  Результат конвертації валют : ${exchange(enteredCurrency)}<br>`);
+document.writeln(`Функція 9.  Згенерований пароль: ${randomPass(enteredLength)}<br>`);
+document.writeln(`Функція 11. Введене слово поліндром?: ${isPolyndrom(userWord)}<br>`);
