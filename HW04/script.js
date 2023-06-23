@@ -80,18 +80,35 @@ const studentsMarks = getMarks (students, marks);
 //тут функція буде не чистою, але не повинна мутувати массив):
 //[["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 
-function randomRating (arr1){
+function randomRating (arr1 ) {
+    const arr2 = [];
     const arr3 = [];
-    for (let i = 0; i < arr1.length; i++ ) {
-        const rating = Math.floor(Math.random() * 5) + 1;
-        const element = [arr1[i], rating];
-        arr3.push(element);
+    const arr4= [];
+    for (let j = 0; j < arr1.length; j++ ) {
+        
+        
+        let str = String(arr1[j]).split(',');
+        let element2 = [str[0]];
+        let element3 = [str[1]];
+        arr2.push(element2);
+        arr3.push(element3);
+        
     }
-    return arr3;
+    for (let i = 0; i < arr2.length; i++ ) {
+        const rating = Math.floor(Math.random() * 5) + 1;
+        const element = [arr2[i], arr3[i], rating];
+        arr4.push(element);
+    }
+   return arr4;
 }
- const pairsRating = randomRating (getPairsThemes );
+ const pairsRating = randomRating (getPairsThemes);
 
 document.writeln(`1. Розділення студентів на пари(хлопець + дівчина):            ${pairsOfStudent} <br>`);
 document.writeln(`2. Зіставлення пари з попереднього завдання та теми проєктів:  ${getPairsThemes} <br>`);
 document.writeln(`3. Зіставлення оцінок(marks) зі студентами(students):          ${studentsMarks} <br>`);
 document.writeln(`4. Випадкова оцінка за проєкт кожній парі від 1 до 5-ти балів: ${pairsRating} <br>`);
+
+console.log(`1. Розділення студентів на пари(хлопець + дівчина):`,pairsOfStudent);
+console.log(`2. Зіставлення пари з попереднього завдання та теми проєктів:`,getPairsThemes);
+console.log(`3. Зіставлення оцінок:`,studentsMarks);
+console.log(`4. Випадкова оцінка за проєкт кожній парі від 1 до 5-ти балів:`,pairsRating);
