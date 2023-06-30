@@ -90,32 +90,38 @@ kidding?"
 Приклад: replaceBadWords("Holy shit!") -> "Holy ***!"
 Приклад: replaceBadWords("It's bullshit!") -> "It's bull****!"
  */
-let phrase = prompt ('Введіть фразу з ненормативною лексикою (англійською), яка буде замінена на ***');
 let badWords = ['fuck', 'shit'];
+let questoin = confirm ('Бажаєте поповнити словкник нецензурних сслів (наразі наявні (fuck, shit)')
+    if (questoin === true){
+        const inputBadWord = prompt ('Введіть нецензурне слово');
+        badWords.push(inputBadWord.toLowerCase());
+    }
+let phrase = prompt ('Введіть фразу з ненормативною лексикою (англійською), яка буде замінена на ***');
 
-function replaceBadWords(input, check){
-    let questoin = confirm ('Бажаєте поповнити словкник нецензурних сслів (наразі наявні (fuck, shit)')
+
+function replaceBadWords(badW, input, check){
+    /*let questoin = confirm ('Бажаєте поповнити словкник нецензурних сслів (наразі наявні (fuck, shit)')
     if (questoin === true){
         const inputBadWord = prompt ('Введіть нецензурне слово');
         check.push(inputBadWord.toLowerCase());
-    }
+    }*/
     let arrayTo = input.trim();
     let args = arrayTo.split(' ');
     let result = [];
     let forReplace = args.join();
+    let forTranslate = forReplace.toLowerCase();
 
     for (let i=0; i<check.length; i++) {
        let badWord = String(check[i]);
-       let a = forReplace.replace(badWord,"***");
-       forReplace = a;
-      
-    }
+       let a = forTranslate.replaceAll(badWord,"***");
+       forTranslate = a;
+      }
     
-    result = forReplace.split(",");
+    result = forTranslate.split(",");
     return result;
 }
 
-let withoutBadWords = replaceBadWords (phrase,badWords );
+let withoutBadWords = replaceBadWords (questoin, phrase, badWords );
 
 
 /*9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні
@@ -157,7 +163,7 @@ document.writeln(`1. Масив випадкових цілих чисел:  ${r
 document.writeln(`3. Cереднє арифметичне всіх переданих в неї аргументів:  ${averange} <br>`);
 document.writeln(`5. Результат фільтрації парних числел:  ${withoutEvenNumbers} <br>`);
 document.writeln(`7. Результат переверки діленні націло на 5:  ${divideByFive} <br>`);
-document.writeln(`8. Результат введеноъ фрази без поганих слів:  ${withoutBadWords} <br>`);
+document.writeln(`8. Результат введеної фрази без нецензурних слів:  ${withoutBadWords} <br>`);
 document.writeln(`9. Результат розділення слова на умовні склади по 3 букви:  ${dividingThree} <br>`);
 
 
@@ -165,5 +171,5 @@ console.log(`1. Масив випадкових цілих чисел: `, random
 console.log(`3. Cереднє арифметичне всіх переданих в неї аргументів: `, averange);
 console.log(`5. Результат фільтрації парних числел: `, withoutEvenNumbers);
 console.log(`7. Результат переверки діленні націло на 5: `, divideByFive);
-console.log(`8. Результат введеноъ фрази без поганих слів:`, withoutBadWords);
+console.log(`8. Результат введеної фрази без нецензурних слів:`, withoutBadWords);
 console.log(`9. Результат розділення слова на умовні склади по 3 букви: `, dividingThree);
