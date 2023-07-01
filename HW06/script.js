@@ -32,6 +32,7 @@ let nameOfStudent = prompt('Для якого студента необхідн�
  
 function getSubjects(studentName, allstudents) {
     let result = [];
+    studentName = studentName.substring(0,1).toUpperCase()+studentName.substring(1).toLowerCase();
     let nameStudent = allstudents.find(item => item.name === studentName);
     let {subjects} = nameStudent;
     Object.entries(subjects).forEach((item) => {
