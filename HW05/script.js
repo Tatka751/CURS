@@ -129,27 +129,43 @@ let withoutBadWords = replaceBadWords (questoin, phrase, badWords );
 видаляються. Рядок приводится до нижнього регістру.
 Приклад: divideByThree("Commander) -> ["com", "man", "der"]
 Приклад: divideByThree("live") -> ["liv", "e"] */
-let userInputPhrase = prompt('Яке слово будемо розбивати на умовні склади по 3 букви?')
+
+
+let userInputPhrase = prompt('Введіть фразу для розбиття кожного слова на умовні склади по три літери')
 
 function divideByThree (inputPhrase){
     let result = [];
-    inputPhrase.replace(' ','')
-    let forDivide = inputPhrase.split("");
-    
-    for (i=0; i<forDivide.length; i = i + 3) {
+    let element = [];
+    //arWords = inputPhrase.replace(' ','')
+    //alert(arWords)
+    let forDivide = inputPhrase.trim().split(" ");  
+    for (i=0; i<forDivide.length; i++) {
         let current = forDivide[i];
-        if ((forDivide[i+1])!=undefined){
-            current = current + forDivide[i+1];
-        }
-        if ((forDivide[i+2])!=undefined){
-            current = current + forDivide[i+2];
-        }
+        element = [];
+        for (let j = 0; j < current.length; j = j + 3){
+            
+            let sklad = current[j];  
+            
+            if ((current[j+1])!=undefined){
+                sklad = sklad + current[j+1];
 
-        let l = current;
-        result.push(l);
+             }
+                if ((current[j+2])!=undefined){
+                 sklad = sklad + current[j+2];
+                 
+            } 
+            
+            let el1 = sklad;
+            element.push(el1);
+            
+        }
+        let el2 = element;
+        result.push(el2);
+
+        
 
     }
-    return result; 
+    return JSON.stringify(result);
 
 }
 
@@ -159,12 +175,13 @@ let dividingThree= divideByThree (userInputPhrase);
 
 
 
+
 document.writeln(`1. Масив випадкових цілих чисел:  ${randomArray} <br>`);
 document.writeln(`3. Cереднє арифметичне всіх переданих в неї аргументів:  ${averange} <br>`);
 document.writeln(`5. Результат фільтрації парних числел:  ${withoutEvenNumbers} <br>`);
 document.writeln(`7. Результат переверки діленні націло на 5:  ${divideByFive} <br>`);
 document.writeln(`8. Результат введеної фрази без нецензурних слів:  ${withoutBadWords} <br>`);
-document.writeln(`9. Результат розділення слова на умовні склади по 3 букви:  ${dividingThree} <br>`);
+document.writeln(`9. Результат розділення на умовні склади по 3 букви:  ${dividingThree} <br>`);
 
 
 console.log(`1. Масив випадкових цілих чисел: `, randomArray);
@@ -172,4 +189,4 @@ console.log(`3. Cереднє арифметичне всіх переданих
 console.log(`5. Результат фільтрації парних числел: `, withoutEvenNumbers);
 console.log(`7. Результат переверки діленні націло на 5: `, divideByFive);
 console.log(`8. Результат введеної фрази без нецензурних слів:`, withoutBadWords);
-console.log(`9. Результат розділення слова на умовні склади по 3 букви: `, dividingThree);
+console.log(`9. Результат розділення на умовні склади по 3 букви: `, dividingThree);
