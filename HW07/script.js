@@ -12,9 +12,9 @@ let inputSalary = Number(prompt('Яка зарплата спеціаліста 
 
 function getMyTaxes ( salary){
     const calculatedTax = Math.round(Number(this.tax) * Number(salary) * 100)/100;
-    document.writeln(`1. Calculated tax:${calculatedTax} <br>`)
+    return calculatedTax;
 }
-getMyTaxes.call(Ukraine, inputSalary);
+console.log(`1. IT-спеціаліст в Україні заплатить податків`,getMyTaxes.call(Ukraine, inputSalary));
 
 /**
  * 2. Створіть функцію getMiddleTaxes.call(country) -> number; – яка рахує
@@ -25,9 +25,11 @@ middleSalary). Функція повинна викликатись через c
 
 function getMiddleTaxes (country){
     const calculatedAllTax = Math.round(Number(this.tax) * Number(this.middleSalary) * 100 ) / 100;
-    document.writeln(`2. Calculated all tax: ${calculatedAllTax}<br>`)
+    return calculatedAllTax;
 }
-getMiddleTaxes.call(Ukraine);
+console.log(`2. Всередньому податків платять IT-спеціалісти в Україні`,getMiddleTaxes.call(Ukraine));
+console.log(`2. Всередньому податків платять IT-спеціалісти в Латвії`,getMiddleTaxes.call(Latvia));
+console.log(`2. Всередньому податків платять IT-спеціалісти в Литві.`,getMiddleTaxes.call(Litva));
 
 /*3. Створіть функцію getTotalTaxes.call(country) -> number; – яка рахує, скільки
 всього податків платять IT-спеціалісти у кожній країні. (tax * middleSalary *
@@ -36,10 +38,12 @@ vacancies). Функція повинна викликатись через call
 */
 function getTotalTaxes (country){
     const calculatedTotalTax = Math.round(Number(this.tax) * Number(this.middleSalary) * Number(this.vacancies) * 100) / 100;
-    document.writeln(`3. Calculated total tax: ${calculatedTotalTax}<br>`)
+    return calculatedTotalTax;
 }
 
-getTotalTaxes.call(Ukraine);
+console.log(`3. Всього податків IT-спеціалісти платять в Україні `,getTotalTaxes.call(Ukraine));
+console.log(`3. Всього податків IT-спеціалісти платять в Латвії`,getTotalTaxes.call(Latvia));
+console.log(`3. Всього податків IT-спеціалісти платять в Литві`,getTotalTaxes.call(Litva));
 
 /*4. Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт
 виду: { salary: number, taxes: number, profit: number } кожні 10 секунд.
@@ -60,9 +64,10 @@ function getMySalary (country) {
     
 
 
-    return console.log(calculated);
+    return console.log(`4. В Україні `,calculated);
    
 
 }
-document.writeln(`4. Результат в консолі <br>`)
+
+document.writeln(`Результати в консолі <br>`)
 let timerShow = setInterval(() => getMySalary(Ukraine), 10000);
