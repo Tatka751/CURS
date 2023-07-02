@@ -99,29 +99,21 @@ let questoin = confirm ('Бажаєте поповнити словкник не
 let phrase = prompt ('Введіть фразу з ненормативною лексикою (англійською), яка буде замінена на ***');
 
 
-function replaceBadWords(badW, input, check){
-    /*let questoin = confirm ('Бажаєте поповнити словкник нецензурних сслів (наразі наявні (fuck, shit)')
-    if (questoin === true){
-        const inputBadWord = prompt ('Введіть нецензурне слово');
-        check.push(inputBadWord.toLowerCase());
-    }*/
+function replaceBadWords( input, check){
+
     let arrayTo = input.trim();
     let args = arrayTo.split(' ');
-    let result = [];
     let forReplace = args.join();
     let forTranslate = forReplace.toLowerCase();
-
     for (let i=0; i<check.length; i++) {
        let badWord = String(check[i]);
        let a = forTranslate.replaceAll(badWord,"***");
        forTranslate = a;
       }
-    
-    result = forTranslate.split(",");
-    return result;
+    return forTranslate;
 }
 
-let withoutBadWords = replaceBadWords (questoin, phrase, badWords );
+let withoutBadWords = replaceBadWords ( phrase, badWords );
 
 
 /*9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні
@@ -158,8 +150,10 @@ function divideByThree (inputPhrase){
             let el1 = sklad;
             element.push(el1);
             
+            
         }
-        let el2 = element;
+
+        let el2 = element.join();
         result.push(el2);
 
         
