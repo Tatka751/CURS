@@ -21,7 +21,7 @@ function getRandomArray (length, min, max) {
 
            }
         }
-    alert(randomArray);
+    
     return randomArray;
 }
 
@@ -100,17 +100,17 @@ let phrase = prompt ('Введіть фразу з ненормативною л
 
 
 function replaceBadWords( input, check){
-
     let arrayTo = input.trim();
     let args = arrayTo.split(' ');
-    let forReplace = args.join();
-    let forTranslate = forReplace.toLowerCase();
-    for (let i=0; i<check.length; i++) {
+    let forTranslate = args.join();
+    //let forTranslate = forReplace.toLowerCase();
+    for (let i = 0; i < check.length; i++) {
        let badWord = String(check[i]);
        let a = forTranslate.replaceAll(badWord,"***");
        forTranslate = a;
       }
-    return forTranslate;
+      let result = forTranslate.replaceAll(`,`,` `);
+    return result;
 }
 
 let withoutBadWords = replaceBadWords ( phrase, badWords );
@@ -127,43 +127,27 @@ let userInputPhrase = prompt('Введіть фразу для розбиття 
 
 function divideByThree (inputPhrase){
     let result = [];
-    let element = [];
-    //arWords = inputPhrase.replace(' ','')
-    //alert(arWords)
-    let forDivide = inputPhrase.trim().split(" ");  
-    for (i=0; i<forDivide.length; i++) {
-        let current = forDivide[i];
-        element = [];
-        for (let j = 0; j < current.length; j = j + 3){
+    let resElem = '';
+    let splitString = inputPhrase.replaceAll(' ','');
+        for (let i = 0; i < splitString.length; i = i + 3) {
+            let sklad = splitString[i];  
             
-            let sklad = current[j];  
-            
-            if ((current[j+1])!=undefined){
-                sklad = sklad + current[j+1];
+            if ((splitString[i + 1])!=undefined){
+                sklad = sklad + splitString[i + 1];
 
              }
-                if ((current[j+2])!=undefined){
-                 sklad = sklad + current[j+2];
+                if ((splitString[i + 2])!=undefined){
+                 sklad = sklad + splitString[i + 2];
                  
             } 
             
-            let el1 = sklad;
-            element.push(el1);
-            
-            
+            resElem = sklad;
+            result.push(resElem);
+      
         }
-
-        let el2 = element.join();
-        result.push(el2);
-
-        
-
-    }
-    return JSON.stringify(result);
-
-}
-
-
+        return JSON.stringify(result);
+      }
+      
 let dividingThree= divideByThree (userInputPhrase);
 
 
