@@ -23,17 +23,31 @@ this.marks -> [5, 4, 4, 5, 5]
 7. Створіть метод this.recover, який дозволить поновити студента
 
 */
+
 document.writeln(`Результати в консолі`);
 class Student {
-  
-    constructor(university, course, fullName, marks, enable){
+    #marks = [];
+    constructor(university, course, fullName){
         this.university = university,
         this.course = course,
         this.fullName = fullName,
-        this.marks = marks,
-        this.enable = true;
+        this.enable = true
+       
     }
+    set marks(value){
+        if (this.enable === true){
+            this.#marks.push(Number(value));
+            console.log(this.#marks);
+        } else {
+            console.log(`Студент не активний`);
+        }
+    }
+    get marks (){
+        return this.enable === true ? this.#marks : null;
+    };
+    
 
+    
     getInfo(){
         if (this.enable === true){
         console.log(`${this.university} cтудент ${this.course}  курсу  ${this.fullName}`);
@@ -41,35 +55,16 @@ class Student {
             console.log(`Студент не активний`);
         }
     }
-
-    set setMark(value) { 
-        if (this.enable === true){
-            this.marks.push(Number(value));
-            console.log(this.studentMarks);
-        } else {
-            console.log(`Студент не активний`);
-        }
-        
-      
-    }
-
-    get studentMarks() {
-        if (this.enable === true){
-        return console.log (`${this.fullName} має оцінки:  ${this.marks}`);
-        } else {
-            console.log(`Студент не активний`);
-        }
-    }
-
+ 
     getAverageMark(){
         let sum = 0;
         let avg = 0;
         if (this.enable === true){
        
-        for ( let i = 0; i < this.marks.length; i++ ){
-            sum = sum + this.marks[i];
+        for ( let i = 0; i < this.#marks.length; i++ ){
+            sum = sum + this.#marks[i];
         }
-        avg = Math.round( sum / this.marks.length * 100) / 100;
+        avg = Math.round( sum / this.#marks.length * 100) / 100;
         console.log(`Cередня оцінка студента ${this.fullName}:   ${avg}`);
 
         } 
@@ -90,12 +85,12 @@ class Student {
 
 
     
+
 }
 
-let Ostap = new Student("Вища Школа Психотерапі їм.Одеса", 1, "Остап Родоманський Бендер", [2, 4, 4, 3, 5]);
-
+let Ostap = new Student("Вища Школа Психотерапі їм.Одеса", 1, "Остап Родоманський Бендер");
 let Anna = new Student("Вища школа мистецтв м.Київ", 4, "Шевченко Анна Марківна ");
-Anna.marks = [5, 4, 4, 5, 5];
+
 
 /*
 
@@ -115,14 +110,14 @@ this.getScholarship.
 
 class BudgetStudent extends Student {
    
-    constructor(university, course, fullName, marks){
-        super(university, course, fullName, marks);
-        this.show = setInterval(() => this.getScholarship(), 3000);
+    constructor(university, course, fullName){
+        super(university, course, fullName);
+        setInterval(() => this.getScholarship(), 30000);
     }  
     
     
     getScholarship(){
-        if (this.enable === true && this.getAverageMark() >= 4.0){
+        if (this.enable === true && this.getAverageMark() >= 4){
             console.log(`${this.fullName} отримує стипендію 1400 грн.`);
         } else {
             console.log(`${this.fullName} не отримує стипендію `);
@@ -131,7 +126,13 @@ class BudgetStudent extends Student {
     }
    
 }
-let Katya = new BudgetStudent("Академія неврології", 5, "Гринько Катерина Вікторівна ", [5,5,4,3,5,5,5,5,5,5]);
+let Katya = new BudgetStudent("Академія неврології", 5, "Гринько Катерина Вікторівна ");
+Katya.marks = 5;
+Katya.marks = 4;
+Katya.marks = 5;
+Katya.marks = 4;
+Katya.marks = 5;
+
 
 
 
