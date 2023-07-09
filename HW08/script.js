@@ -25,7 +25,9 @@ this.marks -> [5, 4, 4, 5, 5]
 */
 
 document.writeln(`Результати в консолі`);
+
 class Student {
+    
     #marks = [];
     constructor(university, course, fullName){
         this.university = university,
@@ -35,13 +37,13 @@ class Student {
        
     }
     set marks(value){
+
         if (this.enable === true){
             this.#marks.push(Number(value));
-            console.log(this.#marks);
-        } else {
-            console.log(`Студент не активний`);
-        }
+            return this.#marks;
+        } 
     }
+
     get marks (){
         return this.enable === true ? this.#marks : null;
     };
@@ -49,42 +51,37 @@ class Student {
 
     
     getInfo(){
+
         if (this.enable === true){
-        console.log(`${this.university} cтудент ${this.course}  курсу  ${this.fullName}`);
-        } else {
-            console.log(`Студент не активний`);
-        }
+        return `${this.university} cтудент ${this.course}  курсу  ${this.fullName}`
+        };
+        
     }
  
     getAverageMark(){
+
         let sum = 0;
         let avg = 0;
+
         if (this.enable === true){
-       
-        for ( let i = 0; i < this.#marks.length; i++ ){
+            for ( let i = 0; i < this.#marks.length; i++ ){
             sum = sum + this.#marks[i];
-        }
+            }
         avg = Math.round( sum / this.#marks.length * 100) / 100;
         console.log(`Cередня оцінка студента ${this.fullName}:   ${avg}`);
-
         } 
         return avg;
    }
 
     dismiss(){
         this.enable = false;
-        console.log(`Cтудента вимкнено`);
+        return `Cтудента вимкнено`;
     }
 
     recover(){
         this.enable = true;
-        console.log(`Cтудента активовано`);
+        return `Cтудента активовано`;
     }
-
-
-
-
-    
 
 }
 
@@ -117,6 +114,7 @@ class BudgetStudent extends Student {
     
     
     getScholarship(){
+
         if (this.enable === true && this.getAverageMark() >= 4){
             console.log(`${this.fullName} отримує стипендію 1400 грн.`);
         } else {
