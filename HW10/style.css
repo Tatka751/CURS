@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(245, 66, 90);
+}
+
+button {
+    border-radius: 7px 50px;
+    background: #73AD21;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px; 
+    height: 150px;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size:500%;
+}
+
+P {
+    width: auto;
+    height: 50px;
+    text-align-last: center;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size:700%;
+}
