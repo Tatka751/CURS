@@ -1,0 +1,16 @@
+span {
+    background-color: antiquewhite;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 177px;
+    text-align: center;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size:700%;
+}
+
+
+
