@@ -1,0 +1,73 @@
+body { 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(153,153,228,1) 35%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+.div {
+    min-width: 100%;
+    min-height: 100%;
+ 
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+#data-container {
+    background-color: aliceblue;
+    height:max-content;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid rgb(69, 141, 223);
+
+}
+
+#next{
+    position: absolute;
+    margin: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  
+    
+}
+ 
+#title {
+    background-size: contain;
+    width: auto;
+    height: 200px;
+    
+} 
+
+p {
+    color: aliceblue;
+    text-align-last: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size:800%;
+}
+
+button {
+   
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(150deg, rgba(51, 106, 206, 1) 0%, rgba(57, 114, 213, 1) 50%, rgba(35, 90, 191, 1) 50%, rgba(1, 60, 163, 1) 100%);
+    font-size: 20px;
+    color: #fff;
+    border-radius: 35px;
+}
+
+#episode {
+    background-color: dodgerblue;
+    color:transparent;
+    height: 60px;
+    width: 60px;
+    font-size: 32px;
+}  
