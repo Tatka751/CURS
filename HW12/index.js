@@ -109,7 +109,7 @@ function everybodyCharacters (array){
 
 
 function  pressButtonInfo () {
-  if (id != 0 ){
+  if (id !== 0 ){
     divClear();
     if (isWooky === true) {
       forFetch = `${BASE_URL}films/${id}?format=wookiee`;
