@@ -109,22 +109,26 @@ function everybodyCharacters (array){
 
 
 function  pressButtonInfo () {
-  divClear();
-  if (isWooky === true) {
-    forFetch = `${BASE_URL}films/${id}?format=wookiee`;
+  if (id != 0 ){
+    divClear();
+    if (isWooky === true) {
+      forFetch = `${BASE_URL}films/${id}?format=wookiee`;
+    } else {
+      forFetch =`${BASE_URL}films/${id}`;
+    }
+    fetch(`${forFetch}`).then((response) => {
+      return response.json()
+    }).then((data) => {
+      console.log(data)
+    let characters = Object.values(data.characters);
+    everybodyCharacters(characters);
+    })
+    .catch((error) => {
+      alert(`Something went wrong`);
+    });
   } else {
-    forFetch =`${BASE_URL}films/${id}`;
+    alert(`Enter the number of episode`)
   }
-  fetch(`${forFetch}`).then((response) => {
-    return response.json()
-  }).then((data) => {
-    console.log(data)
-   let characters = Object.values(data.characters);
-   everybodyCharacters(characters);
-   })
-   .catch((error) => {
-    alert(`Something went wrong`);
-  });
 }
 
 function everyonePlanets (arr){
