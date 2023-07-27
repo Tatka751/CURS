@@ -26,7 +26,7 @@ fontGenerator.next().value -> 12
  */
 
 function* createIdGenerator(){
-  var i = 1;
+  let i = 1;
 
   while  (i > 0) 
     yield i++;
@@ -56,9 +56,9 @@ const fontGenerator = newFontGenerator(14);
 let reSize = document.getElementById("title");
 
 setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
-setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 2000);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 4000);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 6000);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 8000);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 10000);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 1200);
+setTimeout(() => { reSize.style.fontSize = `${fontGenerator.next("up").value}px`}, 1400);
